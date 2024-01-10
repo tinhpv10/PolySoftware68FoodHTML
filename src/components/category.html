@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/output.css" rel="stylesheet" />
+    <title>68Food Component Category</title>
+  </head>
+  <body>
+    <div class="w-full grid grid-cols-6 gap-2">
+      <div class="col-span-1 flex flex-col gap-1 items-center justify-center">
+        <div
+          class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+          onclick="changeColor(this, 6)"
+        >
+          <img
+            class="w-full aspect-square"
+            src="../images/mobile/category/combo.png"
+          />
+        </div>
+        <p class="text-[10px] font-roboto">Combo</p>
+      </div>
+      <div class="col-span-1 flex flex-col gap-1 items-center justify-center">
+        <div
+          class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+          onclick="changeColor(this, 1)"
+        >
+          <img
+            class="w-full aspect-square"
+            src="../images/mobile/category/fish.png"
+          />
+        </div>
+        <p class="text-[10px] font-roboto">Cá</p>
+      </div>
+      <div class="col-span-1 flex flex-col gap-1 items-center justify-center">
+        <div
+          class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+          onclick="changeColor(this, 2)"
+        >
+          <img
+            class="w-full aspect-square"
+            src="../images/mobile/category/meat.png"
+          />
+        </div>
+        <p class="text-[10px] font-roboto">Thịt</p>
+      </div>
+      <div class="col-span-1 flex flex-col gap-1 items-center justify-center">
+        <div
+          class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+          onclick="changeColor(this, 3)"
+        >
+          <img
+            class="w-full aspect-square"
+            src="../images/mobile/category/soup.png"
+          />
+        </div>
+        <p class="text-[10px] font-roboto">Canh</p>
+      </div>
+      <div class="col-span-1 flex flex-col gap-1 items-center justify-center">
+        <div
+          class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+          onclick="changeColor(this, 4)"
+        >
+          <img
+            class="w-full aspect-square"
+            src="../images/mobile/category/stir-fried.png"
+          />
+        </div>
+        <p class="text-[10px] font-roboto">Xào</p>
+      </div>
+      <div class="col-span-1 flex flex-col gap-1 items-center justify-center">
+        <div
+          class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+          onclick="changeColor(this, 5)"
+        >
+          <img
+            class="w-full aspect-square"
+            src="../images/mobile/category/drink.png"
+          />
+        </div>
+        <p class="text-[10px] font-roboto">Nước</p>
+      </div>
+    </div>
+  </body>
+  <script>
+    let selectedDiv = null;
+
+    function changeColor(clickedElement, divNumber) {
+      // Kiểm tra xem selectedDiv đã được chọn trước đó hay không
+      if (selectedDiv !== null) {
+        // Xóa màu nền của thẻ div trước đó
+        selectedDiv.classList.remove("bg-color-blue");
+      }
+
+      // Thêm màu nền cho thẻ div được chọn
+      clickedElement.classList.add("bg-color-blue");
+
+      // Cập nhật selectedDiv
+      selectedDiv = clickedElement;
+    }
+  </script>
+  <!-- bg-[#4888C6] -->
+</html>
