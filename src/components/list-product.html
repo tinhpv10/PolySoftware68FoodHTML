@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/input.css">
+    <title>Danh sách sản phẩm</title>
+</head>
+<body>
+<div class="grid grid-cols-2 gap-4 px-6 pt-6">
+    <div class="card-item bg-white rounded-2xl shadow-lg shadow-gray-300 p-4 flex flex-col justify-between">
+        <div class="image flex justify-center">
+            <img src="/assets/img/comga.jpg" alt="Hình ảnh" class="rounded-full w-full aspect-square p-2 object-cover">
+        </div>
+        <div class="content">
+            <div class="display-name text-center mt-2">
+                <p class="text-lg font-semibold">Cơm gà</p>
+            </div>
+            <div class="price text-center mt-2">
+                <p class="text-xl text-orange-500">25,000 <span class="text-gray-600">VND</span></p>
+            </div>
+            <div class="status text-center mt-2">
+                <p class="text-green-500 font-semibold">sẵn sàng</p>
+            </div>
+        </div>
+        <div class="btn flex justify-center">
+            <button class="bg-red-900 text-white rounded-full px-6 py-2">Thêm</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
