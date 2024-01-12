@@ -7,78 +7,122 @@
     <title>68Food Component Category</title>
   </head>
   <body>
-    <div class="w-full grid grid-cols-6 gap-2">
-      <div class="col-span-1 flex flex-col gap-1 items-center justify-center">
+    <div clas="overflow-x-hidden">
+      <div
+        class="snap-x mx-auto snap-mandatory h-auto flex gap-2 w-full overflow-scroll"
+      >
         <div
-          class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
-          onclick="changeColor(this, 6)"
+          class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
         >
-          <img
-            class="w-full aspect-square"
-            src="../images/mobile/category/combo.png"
-          />
+          <div
+            class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+            onclick="changeColor(this, 1)"
+          >
+            <img
+              class="w-full aspect-square"
+              src="/assets/img/mobile/category/stir-fried.png"
+            />
+          </div>
+          <p class="text-[10px] pt-1">Combo</p>
         </div>
-        <p class="text-[10px] font-roboto">Combo</p>
-      </div>
-      <div class="col-span-1 flex flex-col gap-1 items-center justify-center">
         <div
-          class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
-          onclick="changeColor(this, 1)"
+          class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
         >
-          <img
-            class="w-full aspect-square"
-            src="../images/mobile/category/fish.png"
-          />
+          <div
+            class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+            onclick="changeColor(this, 2)"
+          >
+            <img
+              class="w-full aspect-square"
+              src="/assets/img/mobile/category/fish.png"
+            />
+          </div>
+          <p class="text-[10px] pt-1">Cá</p>
         </div>
-        <p class="text-[10px] font-roboto">Cá</p>
-      </div>
-      <div class="col-span-1 flex flex-col gap-1 items-center justify-center">
         <div
-          class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
-          onclick="changeColor(this, 2)"
+          class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
         >
-          <img
-            class="w-full aspect-square"
-            src="../images/mobile/category/meat.png"
-          />
+          <div
+            class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+            onclick="changeColor(this, 3)"
+          >
+            <img
+              class="w-full aspect-square"
+              src="/assets/img/mobile/category/meat.png"
+            />
+          </div>
+          <p class="text-[10px] pt-1">Thịt</p>
         </div>
-        <p class="text-[10px] font-roboto">Thịt</p>
-      </div>
-      <div class="col-span-1 flex flex-col gap-1 items-center justify-center">
         <div
-          class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
-          onclick="changeColor(this, 3)"
+          class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
         >
-          <img
-            class="w-full aspect-square"
-            src="../images/mobile/category/soup.png"
-          />
+          <div
+            class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+            onclick="changeColor(this, 4)"
+          >
+            <img
+              class="w-full aspect-square"
+              src="/assets/img/mobile/category/soup.png"
+            />
+          </div>
+          <p class="text-[10px] pt-1">Canh</p>
         </div>
-        <p class="text-[10px] font-roboto">Canh</p>
-      </div>
-      <div class="col-span-1 flex flex-col gap-1 items-center justify-center">
         <div
-          class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
-          onclick="changeColor(this, 4)"
+          class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
         >
-          <img
-            class="w-full aspect-square"
-            src="../images/mobile/category/stir-fried.png"
-          />
+          <div
+            class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+            onclick="changeColor(this, 5)"
+          >
+            <img
+              class="w-full aspect-square"
+              src="/assets/img/mobile/category/stir-fried.png"
+            />
+          </div>
+          <p class="text-[10px] pt-1">Xào</p>
         </div>
-        <p class="text-[10px] font-roboto">Xào</p>
-      </div>
-      <div class="col-span-1 flex flex-col gap-1 items-center justify-center">
         <div
-          class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
-          onclick="changeColor(this, 5)"
+          class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
         >
-          <img
-            class="w-full aspect-square"
-            src="../images/mobile/category/drink.png"
-          />
+          <div
+            class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+            onclick="changeColor(this, 6)"
+          >
+            <img
+              class="w-full aspect-square"
+              src="/assets/img/mobile/category/drink.png"
+            />
+          </div>
+          <p class="text-[10px] pt-1">Nước</p>
         </div>
-        <p class="text-[10px] font-roboto">Nước</p>
+        <div
+          class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
+        >
+          <div
+            class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+            onclick="changeColor(this, 6)"
+          >
+            <img
+              class="w-full aspect-square"
+              src="/assets/img/mobile/category/drink.png"
+            />
+          </div>
+          <p class="text-[10px] pt-1">Nước</p>
+        </div>
+        <div
+          class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
+        >
+          <div
+            class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+            onclick="changeColor(this, 6)"
+          >
+            <img
+              class="w-full aspect-square"
+              src="/assets/img/mobile/category/drink.png"
+            />
+          </div>
+          <p class="text-[10px] pt-1">Nước</p>
+        </div>
       </div>
     </div>
   </body>
@@ -99,5 +143,4 @@
       selectedDiv = clickedElement;
     }
   </script>
-  <!-- bg-[#4888C6] -->
 </html>

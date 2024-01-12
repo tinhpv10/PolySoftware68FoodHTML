@@ -8,17 +8,23 @@
   </head>
   <body>
     <div class="flex justify-between p-4 bg-[#FFFFFF]">
-      <div class="w-1/5 flex items-center">
-        <img class="h-2/5 cursor-pointer" src="../images/mobile/hamburger-menu.png" />
-      </div>
-      <div class="w-full flex justify-center items-center font-roboto">
-        <p class="text-[20px] text-color-text">
+      <button id="openModalBtn" class="w-1/5 flex items-center">
+        <img
+          class="h-2/5 cursor-pointer"
+          src="/assets/img/mobile/hamburger-menu.png"
+        />
+      </button>
+      <div class="w-full flex justify-center items-center">
+        <p class="text-[20px]">
           Đặt món cho <span class="font-bold text-color-success">Bàn 2</span>
         </p>
       </div>
-      <div class="w-1/5 flex justify-center items-center">
-        <img class="h-3/5 cursor-pointer" src="../images/mobile/cart.png" />
-      </div>
+      <a
+        href="/src/pages/table-detail.html"
+        class="w-1/5 flex justify-center items-center"
+      >
+        <img class="h-3/5 cursor-pointer" src="/assets/img/mobile/cart.png" />
+      </a>
     </div>
   </body>
 </html>

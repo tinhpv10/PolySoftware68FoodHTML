@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/output.css" rel="stylesheet" />
+    <title>68Food Component Tab Search</title>
+  </head>
+  <body>
+    <div
+        id="content"
+        class="flex flex-col justify-center m-4 border rounded-lg max-w-screen z-10 bg-white"
+      >
+        <!-- Filter And Search Product -->
+        <div>
+          <div class="flex text-center h-14 font-bold text-[20px]">
+            <button
+              id="btn1"
+              class="w-2/4 rounded-tl-lg border-b-color-success border-b-4 text-black"
+            >
+              Món chính
+            </button>
+
+            <button
+              id="btn2"
+              class="w-2/4 rounded-tr-lg bg-color-bg-gray-dark text-white"
+            >
+              Món ăn kèm
+            </button>
+          </div>
+          <!-- Tab 1 -->
+          <div id="content1" class="flex flex-col px-4">
+            <!-- Tab Search -->
+            <div class="w-full items-center h-20 flex justify-between">
+              <input
+                type="text"
+                class="rounded-lg text-xs border outline-0 text-left pl-4 h-3/5 w-2/3 shadow-inner shadow-color-bg-gray-dark"
+                placeholder="Nhập tên món ăn"
+              />
+              <button class="bg-color-success rounded-full w-16 h-8 text-white">
+                Tìm
+              </button>
+            </div>
+            <!-- Category -->
+            <div clas="overflow-x-hidden">
+              <div
+                class="snap-x mx-auto snap-mandatory h-auto flex gap-2 w-full overflow-scroll"
+              >
+                <div
+                  class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
+                >
+                  <div
+                    class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+                    onclick="changeColor(this, 1)"
+                  >
+                    <img
+                      class="w-full aspect-square"
+                      src="/assets/img/mobile/category/stir-fried.png"
+                    />
+                  </div>
+                  <p class="text-[10px] pt-1">Combo</p>
+                </div>
+                <div
+                  class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
+                >
+                  <div
+                    class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+                    onclick="changeColor(this, 2)"
+                  >
+                    <img
+                      class="w-full aspect-square"
+                      src="/assets/img/mobile/category/fish.png"
+                    />
+                  </div>
+                  <p class="text-[10px] pt-1">Cá</p>
+                </div>
+                <div
+                  class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
+                >
+                  <div
+                    class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+                    onclick="changeColor(this, 3)"
+                  >
+                    <img
+                      class="w-full aspect-square"
+                      src="/assets/img/mobile/category/meat.png"
+                    />
+                  </div>
+                  <p class="text-[10px] pt-1">Thịt</p>
+                </div>
+                <div
+                  class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
+                >
+                  <div
+                    class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+                    onclick="changeColor(this, 4)"
+                  >
+                    <img
+                      class="w-full aspect-square"
+                      src="/assets/img/mobile/category/soup.png"
+                    />
+                  </div>
+                  <p class="text-[10px] pt-1">Canh</p>
+                </div>
+                <div
+                  class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
+                >
+                  <div
+                    class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+                    onclick="changeColor(this, 5)"
+                  >
+                    <img
+                      class="w-full aspect-square"
+                      src="/assets/img/mobile/category/stir-fried.png"
+                    />
+                  </div>
+                  <p class="text-[10px] pt-1">Xào</p>
+                </div>
+                <div
+                  class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
+                >
+                  <div
+                    class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+                    onclick="changeColor(this, 6)"
+                  >
+                    <img
+                      class="w-full aspect-square"
+                      src="/assets/img/mobile/category/drink.png"
+                    />
+                  </div>
+                  <p class="text-[10px] pt-1">Nước</p>
+                </div>
+                <div
+                  class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
+                >
+                  <div
+                    class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+                    onclick="changeColor(this, 6)"
+                  >
+                    <img
+                      class="w-full aspect-square"
+                      src="/assets/img/mobile/category/drink.png"
+                    />
+                  </div>
+                  <p class="text-[10px] pt-1">Nước</p>
+                </div>
+                <div
+                  class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
+                >
+                  <div
+                    class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+                    onclick="changeColor(this, 6)"
+                  >
+                    <img
+                      class="w-full aspect-square"
+                      src="/assets/img/mobile/category/drink.png"
+                    />
+                  </div>
+                  <p class="text-[10px] pt-1">Nước</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Tab 2 -->
+          <div id="content2" class="hidden flex flex-col px-4">
+            <!-- Tab Search -->
+
+            <div class="w-full items-center h-20 flex justify-between">
+              <input
+                type="text"
+                class="rounded-lg text-xs border outline-0 text-left pl-4 h-3/5 w-2/3 shadow-inner shadow-color-bg-gray-dark"
+                placeholder="Nhập tên món ăn"
+              />
+              <button class="bg-color-success rounded-full w-16 h-8 text-white">
+                Tìm
+              </button>
+            </div>
+            <!-- Category -->
+            <div clas="overflow-x-hidden">
+              <div
+                class="snap-x mx-auto snap-mandatory h-auto flex justify-center gap-2 w-full overflow-scroll"
+              >
+                <div
+                  class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
+                >
+                  <div
+                    class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+                    onclick="changeColor(this, 1)"
+                  >
+                    <img
+                      class="w-full aspect-square"
+                      src="/assets/img/mobile/category/more-rice.jpg"
+                    />
+                  </div>
+                  <p class="text-[10px] pt-1">Cơm thêm</p>
+                </div>
+                <div
+                  class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
+                >
+                  <div
+                    class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+                    onclick="changeColor(this, 2)"
+                  >
+                    <img
+                      class="w-full aspect-square"
+                      src="/assets/img/mobile/category/cream.jpg"
+                    />
+                  </div>
+                  <p class="text-[10px] pt-1">Kem</p>
+                </div>
+                <div
+                  class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
+                >
+                  <div
+                    class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+                    onclick="changeColor(this, 3)"
+                  >
+                    <img
+                      class="w-full aspect-square"
+                      src="/assets/img/mobile/category/sandwiches.jpg"
+                    />
+                  </div>
+                  <p class="text-[10px] pt-1">Sandwiches</p>
+                </div>
+                <div
+                  class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
+                >
+                  <div
+                    class="w-full aspect-square bg-color-bg-gray-light rounded-[10px] flex justify-center items-center p-2 cursor-pointer"
+                    onclick="changeColor(this, 4)"
+                  >
+                    <img
+                      class="w-full aspect-square"
+                      src="/assets/img/mobile/category/spring-roll.jpg"
+                    />
+                  </div>
+                  <p class="text-[10px] pt-1">Chả giò</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- List Product -->
+        <div class="grid grid-cols-2 gap-2 px-4 pt-2 pb-4">
+          <div
+            class="card-item bg-white rounded-2xl shadow-lg shadow-gray-300 px-2 py-4 flex flex-col justify-between"
+          >
+            <div class="image flex justify-center">
+              <img
+                src="/assets/img/mobile/food/combo/2people.jpg"
+                alt="Hình ảnh"
+                class="rounded-full w-full aspect-square p-2 object-cover"
+              />
+            </div>
+            <div class="content text-[16px]">
+              <div class="display-name text-center mt-1">
+                <p class="font-semibold">Combo 2 người</p>
+              </div>
+              <div class="price text-center mt-1">
+                <p class="text-color-warning">
+                  199,000 <span class="text-color-warning">VND</span>
+                </p>
+              </div>
+              <div class="status text-center">
+                <p class="text-color-green text-[14px]">sẵn sàng</p>
+              </div>
+            </div>
+            <div class="btn flex justify-center mt-2">
+              <button
+                class="bg-color-success text-white rounded-full px-6 py-2 text-[16px]"
+              >
+                Thêm
+              </button>
+            </div>
+          </div>
+          <div
+            class="card-item bg-white rounded-2xl shadow-lg shadow-gray-300 px-2 py-4 flex flex-col justify-between"
+          >
+            <div class="image flex justify-center">
+              <img
+                src="/assets/img/mobile/food/combo/3people.jpg"
+                alt="Hình ảnh"
+                class="rounded-full w-full aspect-square p-2 object-cover"
+              />
+            </div>
+            <div class="content text-[16px]">
+              <div class="display-name text-center mt-1">
+                <p class="font-semibold">Combo 3 người</p>
+              </div>
+              <div class="price text-center mt-1">
+                <p class="text-color-warning">
+                  349,000 <span class="text-color-warning">VND</span>
+                </p>
+              </div>
+              <div class="status text-center">
+                <p class="text-color-green text-[14px]">sẵn sàng</p>
+              </div>
+            </div>
+            <div class="btn flex justify-center mt-2">
+              <button
+                class="bg-color-success text-white rounded-full px-6 py-2 text-[16px]"
+              >
+                Thêm
+              </button>
+            </div>
+          </div>
+          <div
+            class="card-item bg-white rounded-2xl shadow-lg shadow-gray-300 px-2 py-4 flex flex-col justify-between"
+          >
+            <div class="image flex justify-center">
+              <img
+                src="/assets/img/mobile/food/combo/4people.jpg"
+                alt="Hình ảnh"
+                class="rounded-full w-full aspect-square p-2 object-cover"
+              />
+            </div>
+            <div class="content text-[16px]">
+              <div class="display-name text-center mt-1">
+                <p class="font-semibold">Combo 4 người</p>
+              </div>
+              <div class="price text-center mt-1">
+                <p class="text-color-warning">
+                  499,000 <span class="text-color-warning">VND</span>
+                </p>
+              </div>
+              <div class="status text-center">
+                <p class="text-color-green text-[14px]">sẵn sàng</p>
+              </div>
+            </div>
+            <div class="btn flex justify-center mt-2">
+              <button
+                class="bg-color-success text-white rounded-full px-6 py-2 text-[16px]"
+              >
+                Thêm
+              </button>
+            </div>
+          </div>
+          <div
+            class="card-item bg-white rounded-2xl shadow-lg shadow-gray-300 px-2 py-4 flex flex-col justify-between"
+          >
+            <div class="image flex justify-center">
+              <img
+                src="/assets/img/mobile/food/combo/5people.jpg"
+                alt="Hình ảnh"
+                class="rounded-full w-full aspect-square p-2 object-cover"
+              />
+            </div>
+            <div class="content text-[16px]">
+              <div class="display-name text-center mt-1">
+                <p class="font-semibold">Combo 5 người</p>
+              </div>
+              <div class="price text-center mt-1">
+                <p class="text-color-warning">
+                  549,000 <span class="text-color-warning">VND</span>
+                </p>
+              </div>
+              <div class="status text-center">
+                <p class="text-color-green text-[14px]">sẵn sàng</p>
+              </div>
+            </div>
+            <div class="btn flex justify-center mt-2">
+              <button
+                class="bg-color-success text-white rounded-full px-6 py-2 text-[16px]"
+              >
+                Thêm
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
+  <script src="/assets/scripts/tab-search.js"></script>
+</html>

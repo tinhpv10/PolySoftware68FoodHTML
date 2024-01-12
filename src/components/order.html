@@ -1,122 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/src/output.css" rel="stylesheet" />
-    <link href="/src/css/order.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <title>Đơn hàng</title>
-</head>
-
-<body>
-    <button id="open-btn" class="text-color-warning text-[19px]">
-        <i class="fa-solid fa-cart-shopping"></i>
-    </button>
-    <div id="overlay" class="overlay blur-overlay" style="display: none;"></div>
-    <div id="menu-selected-dish" style="display: none;"
-        class="flex flex-col w-4/5 ml-auto bg-color-white p-3 font-roboto">
-        <div class="menu-header w-full flex justify-between items-center text-color-text">
-            <button id="btn-close" class="icon-x text-[20px]">
-                <i class="fa-solid fa-x"></i>
-            </button>
-            <p class="font-bold text-[16px]">Danh sách món được đặt</p>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <title>Simple Modal with Tailwind CSS</title>
+  </head>
+  <body>
+    <div
+      id="modal"
+      class="fixed top-0 right-0 h-full w-4/5 bg-gray-800 bg-opacity-50 hidden flex justify-end transition-transform transform translate-x-full"
+    >
+      <div class="bg-white p-4 w-full overflow-auto">
+        <div class="flex justify-between items-end">
+          <button id="closeModalBtn" class="w-[12%] p-2">
+            <img src="/assets/img/mobile/close.png" />
+          </button>
+          <p class="text-[16px] font-bold">Danh sách món được đặt</p>
         </div>
-        <div class="menu-item flex flex-col w-full items-center justify-center gap-2 p-4">
-            <div class="flex flex-col mb-2">
-                <div class="w-full flex gap-4 mb-2">
-                    <img class="w-1/3 rounded-2xl aspect-square object-cover" src="/assets/images/comga.jpg" alt="" />
-                    <div class="w-full flex flex-col gap-2">
-                        <p>Cơm gà</p>
-                        <p>25,000 VND</p>
-                        <div class="w-full flex justify-between">
-                            <div class="flex w-full flex-row gap-4">
-                                <button class="bg-color-warning px-3 text-[12px] as text-white rounded-md" onclick="decrementQuantity(this)">
-                                    <i class="fa-solid fa-minus"></i>
-                                </button>
-                                <p id="quantity">1</p>
-                                <button class="bg-color-warning px-3 text-[12px] as text-white rounded-md" onclick="incrementQuantity(this)">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                            </div>
-                            <button class="btn-del text-color-success text-[20px]" onclick="confirmRemoveItem(this)">
-                                <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                        </div>
-                    </div>
+        <div class="flex flex-col gap-6 pt-6">
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-center items-center gap-4">
+              <img
+                class="w-1/3 aspect-square object-cover rounded-xl"
+                src="/assets/img/mobile/food/chicken-rice-1.jpg"
+              />
+              <div class="w-full flex flex-col gap-2">
+                <p>Cơm gà</p>
+                <p>25,000 VND</p>
+                <div class="w-full flex justify-between">
+                  <div class="flex w-full flex-row gap-4">
+                    <button
+                      class="bg-color-warning px-3 text-[12px] as text-white rounded-md"
+                      onclick="decrementQuantity(this)"
+                    >
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <p id="quantity">1</p>
+                    <button
+                      class="bg-color-warning px-3 text-[12px] as text-white rounded-md"
+                      onclick="incrementQuantity(this)"
+                    >
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                  <button
+                    class="btn-del text-color-success text-[20px]"
+                    onclick="confirmRemoveItem(this)"
+                  >
+                    <i class="fa-regular fa-trash-can"></i>
+                  </button>
                 </div>
-                <input class="border-2 rounded-md h-10 p-2" type="text" placeholder="Nhập ghi chú..." />
+              </div>
             </div>
-
-            <div class="flex flex-col mb-2">
-                <div class="w-full flex gap-4 mb-2">
-                    <img class="w-1/3 rounded-2xl aspect-square object-cover" src="/assets/images/comtron.jpg" alt="" />
-                    <div class="w-full flex flex-col gap-2">
-                        <p>Cơm trộn</p>
-                        <p>25,000 VND</p>
-                        <div class="w-full flex justify-between">
-                            <div class="flex w-full flex-row gap-4">
-                                <button class="bg-color-warning px-3 text-[12px] as text-white rounded-md" onclick="decrementQuantity(this)">
-                                    <i class="fa-solid fa-minus"></i>
-                                </button>
-                                <p id="quantity">1</p>
-                                <button class="bg-color-warning px-3 text-[12px] as text-white rounded-md" onclick="incrementQuantity(this)">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                            </div>
-                            <button class="btn-del text-color-success text-[20px]" onclick="confirmRemoveItem(this)">
-                                <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                        </div>
-                    </div>
+            <input
+              class="w-full border border-color-secondary rounded-md p-2"
+              placeholder="Nhập ghi chú..."
+            />
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-center items-center gap-4">
+              <img
+                class="w-1/3 aspect-square object-cover rounded-xl"
+                src="/assets/img/mobile/food/chicken-rice-2.jpg"
+              />
+              <div class="w-full flex flex-col gap-2">
+                <p>Cơm gà</p>
+                <p>25,000 VND</p>
+                <div class="w-full flex justify-between">
+                  <div class="flex w-full flex-row gap-4">
+                    <button
+                      class="bg-color-warning px-3 text-[12px] as text-white rounded-md"
+                      onclick="decrementQuantity(this)"
+                    >
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <p id="quantity">1</p>
+                    <button
+                      class="bg-color-warning px-3 text-[12px] as text-white rounded-md"
+                      onclick="incrementQuantity(this)"
+                    >
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                  <button
+                    class="btn-del text-color-success text-[20px]"
+                    onclick="confirmRemoveItem(this)"
+                  >
+                    <i class="fa-regular fa-trash-can"></i>
+                  </button>
                 </div>
-                <input class="border-2 rounded-md h-10 p-2" type="text" placeholder="Nhập ghi chú..." />
+              </div>
             </div>
-
-            <div class="flex flex-col mb-2">
-                <div class="w-full flex gap-4 mb-2">
-                    <img class="w-1/3 rounded-2xl aspect-square object-cover" src="/assets/images/soup.jpg" alt="" />
-                    <div class="w-full flex flex-col gap-2">
-                        <p>Soup</p>
-                        <p>25,000 VND</p>
-                        <div class="w-full flex justify-between">
-                            <div class="flex w-full flex-row gap-4">
-                                <button class="bg-color-warning px-3 text-[12px] as text-white rounded-md" onclick="decrementQuantity(this)">
-                                    <i class="fa-solid fa-minus"></i>
-                                </button>
-                                <p id="quantity">1</p>
-                                <button class="bg-color-warning px-3 text-[12px] as text-white rounded-md" onclick="incrementQuantity(this)">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                            </div>
-                            <button class="btn-del text-color-success text-[20px]" onclick="confirmRemoveItem(this)">
-                                <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <input class="border-2 rounded-md h-10 p-2" type="text" placeholder="Nhập ghi chú..." />
-            </div>
+            <input
+              class="w-full border border-color-secondary rounded-md p-2"
+              placeholder="Nhập ghi chú..."
+            />
+          </div>
         </div>
-        <div class="flex flex-row justify-between p-4">
-            <p class="text-[20px] text-color">Tổng cộng:</p> 
-            <p class="text-[20px] font-bold text-color-success">75,000 VND</p>
-        </div>
-        <div class="flex flex-col p-4">
-            <p>Ghi chú:</p>
-            <textarea rows="4" placeholder="Nhập nội dung..." class="p-4 border-2 mt-2 rounded-md"></textarea>
-        </div>
-        <div class="btn p-4">
-            <button class="bg-color-success text-color-white w-full p-3 rounded-lg font-bold mb-2">
-                Đặt món
+        <div class="flex flex-col w-full pt-8">
+          <div class="flex justify-between items-center w-full">
+            <p class="text-[20px]">Tổng Cộng</p>
+            <p class="text-color-danger font-bold text-[20px]">
+              50,000 <span>VND</span>
+            </p>
+          </div>
+          <!-- <div class="flex flex-col gap-2 pt-6">
+              <p class="text-[16px]">Ghi chú:</p>
+              <textarea
+                class="w-full min-h-20 p-4 rounded-md border border-color-border-gray-light"
+                rows="4"
+                cols="50"
+                placeholder="Nhập nội dung..."
+              ></textarea>
+            </div> -->
+          <div class="flex flex-col gap-2 pt-4">
+            <button
+              class="w-full bg-color-success rounded-lg py-2 text-color-white"
+            >
+              Đặt món
             </button>
-            <button class="border-2 w-full p-3 rounded-lg font-bold" id="btnHuy">
-                Hủy
+            <button
+              class="w-full border border-color-secondary rounded-lg py-2"
+            >
+              Hủy
             </button>
+          </div>
         </div>
+      </div>
     </div>
-    <script src="/assets/js/order.js"></script>
-</body>
 
+    <script src="/assets/scripts/order.js"></script>
+  </body>
 </html>
