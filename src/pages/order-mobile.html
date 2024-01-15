@@ -9,47 +9,65 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <title>68Food Page Other</title>
+    <style>
+      #header.is-sticky {
+        position: fixed;
+        top: 0;
+        box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        animation: slideDown 0.35s ease-out;
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="bg-color-secondary z-0 pb-2 font-roboto text-color-text">
+    <div class="z-0 pb-2 bg-color-secondary font-roboto text-color-text">
       <!-- Header -->
-      <div class="flex justify-between p-4 bg-[#FFFFFF]">
-        <button id="openModalBtn" class="w-1/5 flex items-center">
+      <div id="header" class="flex justify-between p-4 bg-[#FFFFFF]">
+        <button id="openModalBtn" class="flex items-center w-1/5">
           <img
-            class="h-2/5 cursor-pointer"
+            class="cursor-pointer h-2/5"
             src="/assets/img/mobile/hamburger-menu.png"
           />
         </button>
-        <div class="w-full flex justify-center items-center">
+        <div class="flex items-center justify-center w-full">
           <p class="text-[20px]">
             Đặt món cho <span class="font-bold text-color-success">Bàn 2</span>
           </p>
         </div>
         <a
           href="/src/pages/table-detail.html"
-          class="w-1/5 flex justify-center items-center"
+          class="flex items-center justify-center w-1/5"
         >
-          <img class="h-3/5 cursor-pointer" src="/assets/img/mobile/cart.png" />
+          <img class="cursor-pointer h-3/5" src="/assets/img/mobile/cart.png" />
         </a>
       </div>
       <!-- Content -->
       <div
         id="content"
-        class="flex flex-col justify-center m-4 border rounded-lg max-w-screen z-10 bg-white"
+        class="z-10 flex flex-col justify-center m-4 bg-white border rounded-lg max-w-screen"
       >
         <!-- Filter And Search Product -->
         <div>
           <div class="flex text-center h-14 font-bold text-[20px]">
             <button
               id="btn1"
-              class="w-2/4 rounded-tl-lg border-b-color-success border-b-4 text-black"
+              class="w-2/4 text-black border-b-4 rounded-tl-lg border-b-color-success"
             >
               Món chính
             </button>
 
             <button
               id="btn2"
-              class="w-2/4 rounded-tr-lg bg-color-bg-gray-dark text-white"
+              class="w-2/4 text-white rounded-tr-lg bg-color-bg-gray-dark"
             >
               Món ăn kèm
             </button>
@@ -57,20 +75,20 @@
           <!-- Tab 1 -->
           <div id="content1" class="flex flex-col px-4">
             <!-- Tab Search -->
-            <div class="w-full items-center h-20 flex justify-between">
+            <div class="flex items-center justify-between w-full h-20">
               <input
                 type="text"
-                class="rounded-lg text-xs border outline-0 text-left pl-4 h-3/5 w-2/3 shadow-inner shadow-color-bg-gray-dark"
+                class="w-2/3 pl-4 text-xs text-left border rounded-lg shadow-inner outline-0 h-3/5 shadow-color-bg-gray-dark"
                 placeholder="Nhập tên món ăn"
               />
-              <button class="bg-color-success rounded-full w-16 h-8 text-white">
+              <button class="w-16 h-8 text-white rounded-full bg-color-success">
                 Tìm
               </button>
             </div>
             <!-- Category -->
             <div clas="overflow-x-hidden">
               <div
-                class="snap-x mx-auto snap-mandatory h-auto flex gap-2 w-full overflow-scroll"
+                class="flex w-full h-auto gap-2 mx-auto overflow-scroll snap-x snap-mandatory"
               >
                 <div
                   class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
@@ -188,23 +206,23 @@
             </div>
           </div>
           <!-- Tab 2 -->
-          <div id="content2" class="hidden flex flex-col px-4">
+          <div id="content2" class="flex flex-col hidden px-4">
             <!-- Tab Search -->
 
-            <div class="w-full items-center h-20 flex justify-between">
+            <div class="flex items-center justify-between w-full h-20">
               <input
                 type="text"
-                class="rounded-lg text-xs border outline-0 text-left pl-4 h-3/5 w-2/3 shadow-inner shadow-color-bg-gray-dark"
+                class="w-2/3 pl-4 text-xs text-left border rounded-lg shadow-inner outline-0 h-3/5 shadow-color-bg-gray-dark"
                 placeholder="Nhập tên món ăn"
               />
-              <button class="bg-color-success rounded-full w-16 h-8 text-white">
+              <button class="w-16 h-8 text-white rounded-full bg-color-success">
                 Tìm
               </button>
             </div>
             <!-- Category -->
             <div clas="overflow-x-hidden">
               <div
-                class="snap-x mx-auto snap-mandatory h-auto flex justify-center gap-2 w-full overflow-scroll"
+                class="flex justify-center w-full h-auto gap-2 mx-auto overflow-scroll snap-x snap-mandatory"
               >
                 <div
                   class="snap-start w-[15%] flex-shrink-0 flex flex-col items-center justify-center"
@@ -269,29 +287,29 @@
         <!-- List Product -->
         <div class="grid grid-cols-2 gap-2 px-4 pt-2 pb-4">
           <div
-            class="card-item bg-white rounded-2xl shadow-lg shadow-gray-300 px-2 py-4 flex flex-col justify-between"
+            class="flex flex-col justify-between px-2 py-4 bg-white shadow-lg card-item rounded-2xl shadow-gray-300"
           >
-            <div class="image flex justify-center">
+            <div class="flex justify-center image">
               <img
                 src="/assets/img/mobile/food/combo/2people.jpg"
                 alt="Hình ảnh"
-                class="rounded-full w-full aspect-square p-2 object-cover"
+                class="object-cover w-full p-2 rounded-full aspect-square"
               />
             </div>
             <div class="content text-[16px]">
-              <div class="display-name text-center mt-1">
+              <div class="mt-1 text-center display-name">
                 <p class="font-semibold">Combo 2 người</p>
               </div>
-              <div class="price text-center mt-1">
+              <div class="mt-1 text-center price">
                 <p class="text-color-warning">
                   199,000 <span class="text-color-warning">VND</span>
                 </p>
               </div>
-              <div class="status text-center">
+              <div class="text-center status">
                 <p class="text-color-green text-[14px]">sẵn sàng</p>
               </div>
             </div>
-            <div class="btn flex justify-center mt-2">
+            <div class="flex justify-center mt-2 btn">
               <button
                 class="bg-color-success text-white rounded-full px-6 py-2 text-[16px]"
               >
@@ -300,29 +318,339 @@
             </div>
           </div>
           <div
-            class="card-item bg-white rounded-2xl shadow-lg shadow-gray-300 px-2 py-4 flex flex-col justify-between"
+            class="flex flex-col justify-between px-2 py-4 bg-white shadow-lg card-item rounded-2xl shadow-gray-300"
           >
-            <div class="image flex justify-center">
+            <div class="flex justify-center image">
               <img
-                src="/assets/img/mobile/food/combo/3people.jpg"
+                src="/assets/img/mobile/food/combo/2people.jpg"
                 alt="Hình ảnh"
-                class="rounded-full w-full aspect-square p-2 object-cover"
+                class="object-cover w-full p-2 rounded-full aspect-square"
               />
             </div>
             <div class="content text-[16px]">
-              <div class="display-name text-center mt-1">
+              <div class="mt-1 text-center display-name">
+                <p class="font-semibold">Combo 2 người</p>
+              </div>
+              <div class="mt-1 text-center price">
+                <p class="text-color-warning">
+                  199,000 <span class="text-color-warning">VND</span>
+                </p>
+              </div>
+              <div class="text-center status">
+                <p class="text-color-green text-[14px]">sẵn sàng</p>
+              </div>
+            </div>
+            <div class="flex justify-center mt-2 btn">
+              <button
+                class="bg-color-success text-white rounded-full px-6 py-2 text-[16px]"
+              >
+                Thêm
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex flex-col justify-between px-2 py-4 bg-white shadow-lg card-item rounded-2xl shadow-gray-300"
+          >
+            <div class="flex justify-center image">
+              <img
+                src="/assets/img/mobile/food/combo/2people.jpg"
+                alt="Hình ảnh"
+                class="object-cover w-full p-2 rounded-full aspect-square"
+              />
+            </div>
+            <div class="content text-[16px]">
+              <div class="mt-1 text-center display-name">
+                <p class="font-semibold">Combo 2 người</p>
+              </div>
+              <div class="mt-1 text-center price">
+                <p class="text-color-warning">
+                  199,000 <span class="text-color-warning">VND</span>
+                </p>
+              </div>
+              <div class="text-center status">
+                <p class="text-color-green text-[14px]">sẵn sàng</p>
+              </div>
+            </div>
+            <div class="flex justify-center mt-2 btn">
+              <button
+                class="bg-color-success text-white rounded-full px-6 py-2 text-[16px]"
+              >
+                Thêm
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex flex-col justify-between px-2 py-4 bg-white shadow-lg card-item rounded-2xl shadow-gray-300"
+          >
+            <div class="flex justify-center image">
+              <img
+                src="/assets/img/mobile/food/combo/2people.jpg"
+                alt="Hình ảnh"
+                class="object-cover w-full p-2 rounded-full aspect-square"
+              />
+            </div>
+            <div class="content text-[16px]">
+              <div class="mt-1 text-center display-name">
+                <p class="font-semibold">Combo 2 người</p>
+              </div>
+              <div class="mt-1 text-center price">
+                <p class="text-color-warning">
+                  199,000 <span class="text-color-warning">VND</span>
+                </p>
+              </div>
+              <div class="text-center status">
+                <p class="text-color-green text-[14px]">sẵn sàng</p>
+              </div>
+            </div>
+            <div class="flex justify-center mt-2 btn">
+              <button
+                class="bg-color-success text-white rounded-full px-6 py-2 text-[16px]"
+              >
+                Thêm
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex flex-col justify-between px-2 py-4 bg-white shadow-lg card-item rounded-2xl shadow-gray-300"
+          >
+            <div class="flex justify-center image">
+              <img
+                src="/assets/img/mobile/food/combo/2people.jpg"
+                alt="Hình ảnh"
+                class="object-cover w-full p-2 rounded-full aspect-square"
+              />
+            </div>
+            <div class="content text-[16px]">
+              <div class="mt-1 text-center display-name">
+                <p class="font-semibold">Combo 2 người</p>
+              </div>
+              <div class="mt-1 text-center price">
+                <p class="text-color-warning">
+                  199,000 <span class="text-color-warning">VND</span>
+                </p>
+              </div>
+              <div class="text-center status">
+                <p class="text-color-green text-[14px]">sẵn sàng</p>
+              </div>
+            </div>
+            <div class="flex justify-center mt-2 btn">
+              <button
+                class="bg-color-success text-white rounded-full px-6 py-2 text-[16px]"
+              >
+                Thêm
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex flex-col justify-between px-2 py-4 bg-white shadow-lg card-item rounded-2xl shadow-gray-300"
+          >
+            <div class="flex justify-center image">
+              <img
+                src="/assets/img/mobile/food/combo/2people.jpg"
+                alt="Hình ảnh"
+                class="object-cover w-full p-2 rounded-full aspect-square"
+              />
+            </div>
+            <div class="content text-[16px]">
+              <div class="mt-1 text-center display-name">
+                <p class="font-semibold">Combo 2 người</p>
+              </div>
+              <div class="mt-1 text-center price">
+                <p class="text-color-warning">
+                  199,000 <span class="text-color-warning">VND</span>
+                </p>
+              </div>
+              <div class="text-center status">
+                <p class="text-color-green text-[14px]">sẵn sàng</p>
+              </div>
+            </div>
+            <div class="flex justify-center mt-2 btn">
+              <button
+                class="bg-color-success text-white rounded-full px-6 py-2 text-[16px]"
+              >
+                Thêm
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex flex-col justify-between px-2 py-4 bg-white shadow-lg card-item rounded-2xl shadow-gray-300"
+          >
+            <div class="flex justify-center image">
+              <img
+                src="/assets/img/mobile/food/combo/2people.jpg"
+                alt="Hình ảnh"
+                class="object-cover w-full p-2 rounded-full aspect-square"
+              />
+            </div>
+            <div class="content text-[16px]">
+              <div class="mt-1 text-center display-name">
+                <p class="font-semibold">Combo 2 người</p>
+              </div>
+              <div class="mt-1 text-center price">
+                <p class="text-color-warning">
+                  199,000 <span class="text-color-warning">VND</span>
+                </p>
+              </div>
+              <div class="text-center status">
+                <p class="text-color-green text-[14px]">sẵn sàng</p>
+              </div>
+            </div>
+            <div class="flex justify-center mt-2 btn">
+              <button
+                class="bg-color-success text-white rounded-full px-6 py-2 text-[16px]"
+              >
+                Thêm
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex flex-col justify-between px-2 py-4 bg-white shadow-lg card-item rounded-2xl shadow-gray-300"
+          >
+            <div class="flex justify-center image">
+              <img
+                src="/assets/img/mobile/food/combo/2people.jpg"
+                alt="Hình ảnh"
+                class="object-cover w-full p-2 rounded-full aspect-square"
+              />
+            </div>
+            <div class="content text-[16px]">
+              <div class="mt-1 text-center display-name">
+                <p class="font-semibold">Combo 2 người</p>
+              </div>
+              <div class="mt-1 text-center price">
+                <p class="text-color-warning">
+                  199,000 <span class="text-color-warning">VND</span>
+                </p>
+              </div>
+              <div class="text-center status">
+                <p class="text-color-green text-[14px]">sẵn sàng</p>
+              </div>
+            </div>
+            <div class="flex justify-center mt-2 btn">
+              <button
+                class="bg-color-success text-white rounded-full px-6 py-2 text-[16px]"
+              >
+                Thêm
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex flex-col justify-between px-2 py-4 bg-white shadow-lg card-item rounded-2xl shadow-gray-300"
+          >
+            <div class="flex justify-center image">
+              <img
+                src="/assets/img/mobile/food/combo/2people.jpg"
+                alt="Hình ảnh"
+                class="object-cover w-full p-2 rounded-full aspect-square"
+              />
+            </div>
+            <div class="content text-[16px]">
+              <div class="mt-1 text-center display-name">
+                <p class="font-semibold">Combo 2 người</p>
+              </div>
+              <div class="mt-1 text-center price">
+                <p class="text-color-warning">
+                  199,000 <span class="text-color-warning">VND</span>
+                </p>
+              </div>
+              <div class="text-center status">
+                <p class="text-color-green text-[14px]">sẵn sàng</p>
+              </div>
+            </div>
+            <div class="flex justify-center mt-2 btn">
+              <button
+                class="bg-color-success text-white rounded-full px-6 py-2 text-[16px]"
+              >
+                Thêm
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex flex-col justify-between px-2 py-4 bg-white shadow-lg card-item rounded-2xl shadow-gray-300"
+          >
+            <div class="flex justify-center image">
+              <img
+                src="/assets/img/mobile/food/combo/2people.jpg"
+                alt="Hình ảnh"
+                class="object-cover w-full p-2 rounded-full aspect-square"
+              />
+            </div>
+            <div class="content text-[16px]">
+              <div class="mt-1 text-center display-name">
+                <p class="font-semibold">Combo 2 người</p>
+              </div>
+              <div class="mt-1 text-center price">
+                <p class="text-color-warning">
+                  199,000 <span class="text-color-warning">VND</span>
+                </p>
+              </div>
+              <div class="text-center status">
+                <p class="text-color-green text-[14px]">sẵn sàng</p>
+              </div>
+            </div>
+            <div class="flex justify-center mt-2 btn">
+              <button
+                class="bg-color-success text-white rounded-full px-6 py-2 text-[16px]"
+              >
+                Thêm
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex flex-col justify-between px-2 py-4 bg-white shadow-lg card-item rounded-2xl shadow-gray-300"
+          >
+            <div class="flex justify-center image">
+              <img
+                src="/assets/img/mobile/food/combo/2people.jpg"
+                alt="Hình ảnh"
+                class="object-cover w-full p-2 rounded-full aspect-square"
+              />
+            </div>
+            <div class="content text-[16px]">
+              <div class="mt-1 text-center display-name">
+                <p class="font-semibold">Combo 2 người</p>
+              </div>
+              <div class="mt-1 text-center price">
+                <p class="text-color-warning">
+                  199,000 <span class="text-color-warning">VND</span>
+                </p>
+              </div>
+              <div class="text-center status">
+                <p class="text-color-green text-[14px]">sẵn sàng</p>
+              </div>
+            </div>
+            <div class="flex justify-center mt-2 btn">
+              <button
+                class="bg-color-success text-white rounded-full px-6 py-2 text-[16px]"
+              >
+                Thêm
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex flex-col justify-between px-2 py-4 bg-white shadow-lg card-item rounded-2xl shadow-gray-300"
+          >
+            <div class="flex justify-center image">
+              <img
+                src="/assets/img/mobile/food/combo/3people.jpg"
+                alt="Hình ảnh"
+                class="object-cover w-full p-2 rounded-full aspect-square"
+              />
+            </div>
+            <div class="content text-[16px]">
+              <div class="mt-1 text-center display-name">
                 <p class="font-semibold">Combo 3 người</p>
               </div>
-              <div class="price text-center mt-1">
+              <div class="mt-1 text-center price">
                 <p class="text-color-warning">
                   349,000 <span class="text-color-warning">VND</span>
                 </p>
               </div>
-              <div class="status text-center">
+              <div class="text-center status">
                 <p class="text-color-green text-[14px]">sẵn sàng</p>
               </div>
             </div>
-            <div class="btn flex justify-center mt-2">
+            <div class="flex justify-center mt-2 btn">
               <button
                 class="bg-color-success text-white rounded-full px-6 py-2 text-[16px]"
               >
@@ -331,29 +659,29 @@
             </div>
           </div>
           <div
-            class="card-item bg-white rounded-2xl shadow-lg shadow-gray-300 px-2 py-4 flex flex-col justify-between"
+            class="flex flex-col justify-between px-2 py-4 bg-white shadow-lg card-item rounded-2xl shadow-gray-300"
           >
-            <div class="image flex justify-center">
+            <div class="flex justify-center image">
               <img
                 src="/assets/img/mobile/food/combo/4people.jpg"
                 alt="Hình ảnh"
-                class="rounded-full w-full aspect-square p-2 object-cover"
+                class="object-cover w-full p-2 rounded-full aspect-square"
               />
             </div>
             <div class="content text-[16px]">
-              <div class="display-name text-center mt-1">
+              <div class="mt-1 text-center display-name">
                 <p class="font-semibold">Combo 4 người</p>
               </div>
-              <div class="price text-center mt-1">
+              <div class="mt-1 text-center price">
                 <p class="text-color-warning">
                   499,000 <span class="text-color-warning">VND</span>
                 </p>
               </div>
-              <div class="status text-center">
+              <div class="text-center status">
                 <p class="text-color-green text-[14px]">sẵn sàng</p>
               </div>
             </div>
-            <div class="btn flex justify-center mt-2">
+            <div class="flex justify-center mt-2 btn">
               <button
                 class="bg-color-success text-white rounded-full px-6 py-2 text-[16px]"
               >
@@ -362,29 +690,29 @@
             </div>
           </div>
           <div
-            class="card-item bg-white rounded-2xl shadow-lg shadow-gray-300 px-2 py-4 flex flex-col justify-between"
+            class="flex flex-col justify-between px-2 py-4 bg-white shadow-lg card-item rounded-2xl shadow-gray-300"
           >
-            <div class="image flex justify-center">
+            <div class="flex justify-center image">
               <img
                 src="/assets/img/mobile/food/combo/5people.jpg"
                 alt="Hình ảnh"
-                class="rounded-full w-full aspect-square p-2 object-cover"
+                class="object-cover w-full p-2 rounded-full aspect-square"
               />
             </div>
             <div class="content text-[16px]">
-              <div class="display-name text-center mt-1">
+              <div class="mt-1 text-center display-name">
                 <p class="font-semibold">Combo 5 người</p>
               </div>
-              <div class="price text-center mt-1">
+              <div class="mt-1 text-center price">
                 <p class="text-color-warning">
                   549,000 <span class="text-color-warning">VND</span>
                 </p>
               </div>
-              <div class="status text-center">
+              <div class="text-center status">
                 <p class="text-color-green text-[14px]">sẵn sàng</p>
               </div>
             </div>
-            <div class="btn flex justify-center mt-2">
+            <div class="flex justify-center mt-2 btn">
               <button
                 class="bg-color-success text-white rounded-full px-6 py-2 text-[16px]"
               >
@@ -397,10 +725,10 @@
       <!-- Modal -->
       <div
         id="modal"
-        class="fixed top-0 right-0 h-full w-4/5 bg-gray-800 bg-opacity-50 hidden flex justify-end transition-transform transform translate-x-full"
+        class="fixed top-0 right-0 flex justify-end hidden w-4/5 h-full transition-transform transform translate-x-full bg-gray-800 bg-opacity-50"
       >
-        <div class="bg-white p-4 w-full overflow-auto">
-          <div class="flex justify-between items-end">
+        <div class="w-full p-4 overflow-auto bg-white">
+          <div class="flex items-end justify-between">
             <button id="closeModalBtn" class="w-[12%] p-2">
               <img src="/assets/img/mobile/close.png" />
             </button>
@@ -408,16 +736,16 @@
           </div>
           <div class="flex flex-col gap-6 pt-6">
             <div class="flex flex-col gap-4">
-              <div class="flex justify-center items-center gap-4">
+              <div class="flex items-center justify-center gap-4">
                 <img
-                  class="w-1/3 aspect-square object-cover rounded-xl"
+                  class="object-cover w-1/3 aspect-square rounded-xl"
                   src="/assets/img/mobile/food/chicken-rice-1.jpg"
                 />
-                <div class="w-full flex flex-col gap-2">
+                <div class="flex flex-col w-full gap-2">
                   <p>Cơm gà</p>
                   <p>25,000 VND</p>
-                  <div class="w-full flex justify-between">
-                    <div class="flex w-full flex-row gap-4">
+                  <div class="flex justify-between w-full">
+                    <div class="flex flex-row w-full gap-4">
                       <button
                         class="bg-color-warning px-3 text-[12px] as text-white rounded-md"
                         onclick="decrementQuantity(this)"
@@ -441,19 +769,22 @@
                   </div>
                 </div>
               </div>
-              <input class="w-full border border-color-secondary rounded-md p-2" placeholder="Nhập ghi chú..." />
+              <input
+                class="w-full p-2 border rounded-md border-color-secondary"
+                placeholder="Nhập ghi chú..."
+              />
             </div>
             <div class="flex flex-col gap-4">
-              <div class="flex justify-center items-center gap-4">
+              <div class="flex items-center justify-center gap-4">
                 <img
-                  class="w-1/3 aspect-square object-cover rounded-xl"
+                  class="object-cover w-1/3 aspect-square rounded-xl"
                   src="/assets/img/mobile/food/chicken-rice-2.jpg"
                 />
-                <div class="w-full flex flex-col gap-2">
+                <div class="flex flex-col w-full gap-2">
                   <p>Cơm gà</p>
                   <p>25,000 VND</p>
-                  <div class="w-full flex justify-between">
-                    <div class="flex w-full flex-row gap-4">
+                  <div class="flex justify-between w-full">
+                    <div class="flex flex-row w-full gap-4">
                       <button
                         class="bg-color-warning px-3 text-[12px] as text-white rounded-md"
                         onclick="decrementQuantity(this)"
@@ -477,11 +808,14 @@
                   </div>
                 </div>
               </div>
-              <input class="w-full border border-color-secondary rounded-md p-2" placeholder="Nhập ghi chú..." />
+              <input
+                class="w-full p-2 border rounded-md border-color-secondary"
+                placeholder="Nhập ghi chú..."
+              />
             </div>
           </div>
           <div class="flex flex-col w-full pt-8">
-            <div class="flex justify-between items-center w-full">
+            <div class="flex items-center justify-between w-full">
               <p class="text-[20px]">Tổng Cộng</p>
               <p class="text-color-danger font-bold text-[20px]">
                 50,000 <span>VND</span>
@@ -490,7 +824,7 @@
             <!-- <div class="flex flex-col gap-2 pt-6">
               <p class="text-[16px]">Ghi chú:</p>
               <textarea
-                class="w-full min-h-20 p-4 rounded-md border border-color-border-gray-light"
+                class="w-full p-4 border rounded-md min-h-20 border-color-border-gray-light"
                 rows="4"
                 cols="50"
                 placeholder="Nhập nội dung..."
@@ -498,12 +832,12 @@
             </div> -->
             <div class="flex flex-col gap-2 pt-4">
               <button
-                class="w-full bg-color-success rounded-lg py-2 text-color-white"
+                class="w-full py-2 rounded-lg bg-color-success text-color-white"
               >
                 Đặt món
               </button>
               <button
-                class="w-full border border-color-secondary rounded-lg py-2"
+                class="w-full py-2 border rounded-lg border-color-secondary"
               >
                 Hủy
               </button>
@@ -531,6 +865,17 @@
       // Cập nhật selectedDiv
       selectedDiv = clickedElement;
     }
+    const header = document.getElementById("header");
+    const toggleClass = "is-sticky";
+
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 100) {
+        header.classList.add(toggleClass);
+      } else {
+        header.classList.remove(toggleClass);
+      }
+    });
   </script>
   <style>
     .no-scroll {
